@@ -825,212 +825,63 @@
        PRODUCTS
        ========================= */
 
-    .products {
+    <div class="products" id="products"></div>
 
-      display: grid;
 
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
+<!-- =========================
+     CART DRAWER
+     ========================= -->
 
-      gap: 20px;
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 
-    }
+<aside class="cart-drawer" id="cartDrawer">
 
+  <div class="cart-header">
 
-    .product-card {
+    <div>
+      <span class="cart-label">YOUR BAG</span>
+      <h2>Shopping Cart</h2>
+    </div>
 
-      background:
-        linear-gradient(
-          160deg,
-          #15140f,
-          #0a0a09
-        );
+    <button class="cart-close" onclick="closeCart()">
+      ×
+    </button>
 
-      border:
-        1px solid
-        var(--border);
+  </div>
 
-      border-radius: 22px;
 
-      overflow: hidden;
+  <div id="cartItems" class="cart-items">
 
-      transition: .4s;
+    <!-- Cart items appear here -->
 
-    }
+  </div>
 
 
-    .product-card:hover {
+  <div class="cart-footer">
 
-      transform:
-        translateY(-9px);
+    <div class="cart-total-row">
 
-      border-color:
-        rgba(
-          245,
-          207,
-          103,
-          .35
-        );
+      <span>Total</span>
 
-      box-shadow:
-        0 25px 60px
-        rgba(
-          0,
-          0,
-          0,
-          .4
-        );
+      <strong id="cartTotal">
+        Rs. 0
+      </strong>
 
-    }
+    </div>
 
 
-    .product-image {
+    <button
+      class="checkout-btn"
+      onclick="checkout()"
+    >
 
-      height: 300px;
+      Checkout →
 
-      background:
-        radial-gradient(
-          circle,
-          #272319,
-          #080807
-        );
+    </button>
 
-      overflow: hidden;
+  </div>
 
-    }
-
-
-    .product-image img {
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
-      transition: .5s;
-
-    }
-
-
-    .product-card:hover
-    .product-image img {
-
-      transform:
-        scale(1.05);
-
-    }
-
-
-    .product-info {
-
-      padding: 23px;
-
-    }
-
-
-    .product-tag {
-
-      color:
-        var(--gold-light);
-
-      font-size: 10px;
-
-      letter-spacing: .2em;
-
-      text-transform:
-        uppercase;
-
-    }
-
-
-    .product-info h3 {
-
-      margin:
-        9px 0;
-
-      font-size: 20px;
-
-    }
-
-
-    .product-info p {
-
-      color:
-        var(--muted);
-
-      font-size: 13px;
-
-      line-height: 1.7;
-
-    }
-
-
-    .product-bottom {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content:
-        space-between;
-
-      margin-top: 20px;
-
-    }
-
-
-    .price {
-
-      font-size: 20px;
-
-      font-weight: 900;
-
-    }
-
-
-    .add-cart {
-
-      border:
-        1px solid
-        rgba(
-          245,
-          207,
-          103,
-          .35
-        );
-
-      background:
-        transparent;
-
-      color:
-        var(--gold-light);
-
-      padding:
-        10px 15px;
-
-      border-radius: 50px;
-
-      cursor: pointer;
-
-      font-weight: 800;
-
-      transition: .3s;
-
-    }
-
-
-    .add-cart:hover {
-
-      background:
-        var(--gold-light);
-
-      color: #161107;
-
-    }
+</aside>
 
 
     /* =========================
