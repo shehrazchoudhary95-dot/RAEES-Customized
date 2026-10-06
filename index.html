@@ -228,4 +228,201 @@ body.lock{overflow:hidden}
   <div><b>Custom designs</b><span>Send an idea or pick one of ours.</span></div>
   <div><b>Personalized names</b><span>Names and numbers on every shirt.</span></div>
   <div><b>Gifts and couples</b><span>Matching sets for the people you love.</span></div>
-  <div><b>Premium quality</b><span>Soft fabric and prints
+  <div><b>Premium quality</b><span>Soft fabric and prints that last.</span></div>
+</div></div>
+<section id="sale" class="sale"><div class="wrap"><div class="saleBox">
+  <img id="saleImg" src="" alt="">
+  <div>
+    <h2>Daily Sale</h2>
+    <p class="sub" id="saleName" style="margin-bottom:14px"></p>
+    <div class="price"><s id="saleOld"></s><b id="saleNew"></b><em id="salePct"></em></div>
+    <div class="timer" id="timer" aria-label="Time left"></div>
+    <button class="btn" id="saleAdd" type="button">Add to cart</button>
+  </div>
+</div></div></section>
+
+<section id="designs"><div class="wrap">
+  <h2>The Collection</h2>
+  <p class="sub">Order a design as it is, or ask us to change the colors, text and layout.</p>
+  <div class="grid" id="gallery"></div>
+</div></section>
+  
+<section class="studio" id="studio"><div class="wrap">
+  <h2>Pro Design Studio</h2> <p class="sub" id="saleName" style="margin-bottom:14px"></p>
+    <div class="price"><s id="saleOld"></s><b id="saleNew"></b><em id="salePct"></em></div>
+    <div class="timer" id="timer" aria-label="Time left"></div>
+    <button class="btn" id="saleAdd" type="button">Add to cart</button>
+  </div>
+</div></div></section>
+
+<section id="designs"><div class="wrap">
+  <h2>The Collection</h2>
+  <p class="sub">Order a design as it is, or ask us to change the colors, text and layout.</p>
+  <div class="grid" id="gallery"></div>
+</div></section>
+
+<section class="studio" id="studio"><div class="wrap">
+  <h2>Pro Design Studio</h2>
+  <p class="sub">Pick a style, start from a template or from scratch, then drag, resize and layer your design. Add it to the cart when it looks right.</p>
+  <div class="sgrid">
+    <div>
+      <div class="stage">
+        <svg id="tee" viewBox="0 0 300 320" role="img" aria-label="T-shirt design preview">
+          <path id="body" d="M95 20 L125 20 Q150 48 175 20 L205 20 L282 66 L256 118 L226 102 L226 302 L74 302 L74 102 L44 118 L18 66 Z" fill="#111" stroke="#666" stroke-width="2"/>
+          <path id="collar" d="M125 20 Q150 48 175 20" fill="none" stroke="#666" stroke-width="3"/>
+          <rect class="area" x="88" y="56" width="124" height="230" rx="4"/>
+          <g id="layers"></g>
+        </svg>
+      </div>
+      <div class="row seg" role="group" aria-label="Side">
+        <button type="button" id="vFront" aria-pressed="true">Front</button>
+        <button type="button" id="vBack" aria-pressed="false">Back</button>
+      </div>
+      <label>Layers on this side</label><div class="llist" id="layerList"></div>
+    </div>
+    <div>
+      <label style="margin-top:0">Shirt style</label>
+      <div class="row seg" id="styleSeg" role="group" aria-label="Shirt style" style="margin-top:10px"></div>
+      <label>Shirt color</label>
+      <div class="row" id="swatches" role="group" aria-label="T-shirt color" style="margin-top:10px"></div>
+      <label>Start from a template</label>
+      <div class="row seg" id="tplRow" role="group" aria-label="Templates" style="margin-top:10px"></div>
+      <div class="tools">
+        <button class="btn sm" id="addText" type="button">Add text</button>
+        <label class="btn ghost sm" for="upImg" style="margin:0">Upload image</label>
+        <input type="file" id="upImg" accept="image/*" hidden>
+        <button class="btn ghost sm" type="button" data-k="circle">Circle</button>
+        <button class="btn ghost sm" type="button" data-k="square">Square</button>
+        <button class="btn ghost sm" type="button" data-k="bar">Line</button>
+        <button class="btn ghost sm" type="button" data-k="star">Star</button>
+      </div>
+      <label>Urdu words (tap to add)</label>
+      <div class="row ur" id="urRow" style="margin-top:10px"></div>
+      <p class="hint">You can also type your own Urdu with your phone's Urdu keyboard.</p>
+      <div class="editor" id="editor" hidden>
+        <div id="txtRow">
+          <label for="inText">Text</label><input id="inText" maxlength="24" autocomplete="off">
+          <label for="inFont">Font</label><select id="inFont"></select>
+        </div>
+        <div id="colRow"><label for="inColor">Color</label><input type="color" id="inColor" value="#ffffff"></div>
+        <div id="outRow">
+          <div class="two">
+            <div><label for="inSp">Letter spacing</label><input type="range" id="inSp" min="0" max="12" step="0.5" value="0"></div>
+            <div><label for="inSw">Outline</label><input type="range" id="inSw" min="0" max="4" step="0.5" value="0"></div>
+          </div>
+          <label for="inSc">Outline color</label><input type="color" id="inSc" value="#000000">
+        </div>
+        <label for="inSz">Size</label><input type="range" id="inSz" min="10" max="90" value="26">
+        <div class="two">
+          <div><label for="inRot">Rotate</label><input type="range" id="inRot" min="-180" max="180" value="0"></div>
+          <div><label for="inOp">Opacity</label><input type="range" id="inOp" min="0.1" max="1" step="0.05" value="1"></div>
+        </div>
+        <div class="tools">
+          <button class="btn ghost sm" id="btnCenter" type="button">Center across</button>
+          <button class="btn ghost sm" id="btnMid" type="button">Center down</button>
+          <button class="btn ghost sm" id="btnFlip" type="button">Flip</button>
+          <button class="btn ghost sm" id="btnFwd" type="button">Bring forward</button>
+          <button class="btn ghost sm" id="btnBack" type="button">Send back</button>
+          <button class="btn ghost sm" id="btnDup" type="button">Duplicate</button>
+          <button class="btn ghost sm" id="btnDel" type="button">Delete</button>
+        </div>
+      </div>
+      <p class="hint">Tap a design on the shirt to edit it. Drag to move it.</p>
+      <div class="two">
+        <div><label for="inSize">Size</label><select id="inSize"><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
+        <div><label for="inQty">Quantity</label><input id="inQty" type="number" min="1" value="1" inputmode="numeric"></div>
+      </div>
+      <p class="price" style="margin:20px 0 0"><b id="priceLine" style="font-size:1.3rem"></b></p>
+      <button class="btn" id="order" type="button" style="width:100%;margin-top:14px">Add to cart</button>
+      <p class="hint">If you uploaded an image, send it in the WhatsApp chat after you place your order.</p>
+    </div>
+  </div>
+</div></section>section><div class="wrap">
+  <h2>How it works</h2>
+  <p class="sub">Three simple steps from idea to doorstep.</p>
+  <div class="steps">
+    <div><b>Choose</b><span>Pick a design from the collection or share your own idea.</span></div>
+    <div><b>Customize</b><span>Set the color, name, number and size in the studio.</span></div>
+    <div><b>Confirm</b><span>Send the order on WhatsApp and we take care of the rest.</span></div>
+  </div>
+</div></section>
+
+<section id="about" class="about" style="padding-top:0"><div class="wrap">
+  <img src="images/logo.webp" alt="Raees Custom T-Shirts logo" loading="lazy">
+  <div>
+    <h2>Made for the way you dress</h2>
+    <p class="sub" style="margin-bottom:26px">Team jerseys, Urdu and Arabic calligraphy, bold streetwear or a simple name tee. Tell us what you want and we print it.</p>
+    <a class="btn" href="#studio">Design Your Tee</a>
+  </div>
+</div></section>
+<section id="location"><div class="wrap">
+  <h2>Visit Us</h2>
+  <p class="sub">Come to our shop, or order from anywhere.</p>
+  <div class="mapgrid">
+    <iframe id="map" title="Shop location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="minfo">
+      <b>Address</b><span id="addr"></span>
+      <b>Phone and WhatsApp</b><a href="tel:03278222667">0327 8222667</a>
+      <a class="btn sm" id="dir" target="_blank" rel="noopener" style="margin-top:18px">Get directions</a>
+    </div>
+  </div>
+</div></section>section id="about" class="about" style="padding-top:0"><div class="wrap">
+  <img src="images/logo.webp" alt="Raees Custom T-Shirts logo" loading="lazy">
+  <div>
+    <h2>Made for the way you dress</h2>
+    <p class="sub" style="margin-bottom:26px">Team jerseys, Urdu and Arabic calligraphy, bold streetwear or a simple name tee. Tell us what you want and we print it.</p>
+    <a class="btn" href="#studio">Design Your Tee</a>
+  </div>
+</div></section>
+<section id="location"><div class="wrap">
+  <h2>Visit Us</h2>
+  <p class="sub">Come to our shop, or order from anywhere.</p>
+  <div class="mapgrid">
+    <iframe id="map" title="Shop location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="minfo">
+      <b>Address</b><span id="addr"></span>
+      <b>Phone and WhatsApp</b><a href="tel:03278222667">0327 8222667</a>
+      <a class="btn sm" id="dir" target="_blank" rel="noopener" style="margin-top:18px">Get directions</a>
+    </div>
+  </div>
+</div></section>
+section id="about" class="about" style="padding-top:0"><div class="wrap">
+  <img src="images/logo.webp" alt="Raees Custom T-Shirts logo" loading="lazy">
+  <div>
+    <h2>Made for the way you dress</h2>
+    <p class="sub" style="margin-bottom:26px">Team jerseys, Urdu and Arabic calligraphy, bold streetwear or a simple name tee. Tell us what you want and we print it.</p>
+    <a class="btn" href="#studio">Design Your Tee</a>
+  </div>
+</div></section>
+<section id="location"><div class="wrap">
+  <h2>Visit Us</h2>
+  <p class="sub">Come to our shop, or order from anywhere.</p>
+  <div class="mapgrid">
+    <iframe id="map" title="Shop location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="minfo">
+      <b>Address</b><span id="addr"></span>
+      <b>Phone and WhatsApp</b><a href="tel:03278222667">0327 8222667</a>
+      <a class="btn sm" id="dir" target="_blank" rel="noopener" style="margin-top:18px">Get directions</a>
+    </div>
+  </div>
+</div></section>
+section id="about" class="about" style="padding-top:0"><div class="wrap">
+  <img src="images/logo.webp" alt="Raees Custom T-Shirts logo" loading="lazy">
+  <div>
+    <h2>Made for the way you dress</h2>
+    <p class="sub" style="margin-bottom:26px">Team jerseys, Urdu and Arabic calligraphy, bold streetwear or a simple name tee. Tell us what you want and we print it.</p>
+    <a class="btn" href="#studio">Design Your Tee</a>
+  </div>
+</div></section>
+<section id="location"><div class="wrap">
+  <h2>Visit Us</h2>
+  <p class="sub">Come to our shop, or order from anywhere.</p>
+  <div class="mapgrid">
+    <iframe id="map" title="Shop location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="minfo">
+      <b>Address</b><span id="addr"></span>
+      <b>Phone and WhatsApp</b><a href="tel:03278222667">0327 8222667</a>
+      <a class="btn sm" id="dir" target="_blank" rel="noopener" style="margin-top:18px">Get directions</a>
+    </div>
+  </div>
+</div></section>
